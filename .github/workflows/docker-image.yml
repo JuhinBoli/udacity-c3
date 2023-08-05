@@ -27,7 +27,7 @@ jobs:
     - name: tag the Docker image
       run: docker tag udagram-api-user myxuyen0889/udagram-api-user:v1
     - name: tag the Docker image
-      run: docker tag udagram-frontend myxuyen0889/udagram-frontend:v1
+      run: docker tag udagram-frontend myxuyen0889/udagram-frontend:v2
     - name: tag the Docker image
       run: docker tag udagram-reverseproxy myxuyen0889/reverseproxy:v1
     -
@@ -43,6 +43,6 @@ jobs:
     - name: push the Docker image
       run: docker push myxuyen0889/udagram-api-user:v1
     - name: push the Docker image
-      run: docker push myxuyen0889/udagram-frontend:v1
+      run: docker push myxuyen0889/udagram-frontend:v2
     - name: push the Docker image
       run: docker push myxuyen0889/reverseproxy:v1
