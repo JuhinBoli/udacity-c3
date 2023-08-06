@@ -65,14 +65,14 @@ spec:
               key: POSTGRES_DATABASE
         - name: POSTGRES_PASSWORD
           valueFrom:
-            secretKeyRef:
-              name: env-secret
+            configMapKeyRef:
+              name: env-config
               key: POSTGRES_PASSWORD
         - name: POSTGRES_USERNAME
           valueFrom:
-            secretKeyRef:
-              name: env-secret
-              key: POSTGRES_USERNAME 
+            configMapKeyRef:
+              name: env-config
+              key: POSTGRES_USERNAME
         - name: NODE_OPTIONS
           valueFrom:
             configMapKeyRef:
