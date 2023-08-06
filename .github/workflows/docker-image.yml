@@ -14,21 +14,21 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build -t udagram-api-feed ./udagram-api-feed
-    - name: Build the Docker image
+    - name: Build the udagram-api-user image
       run: docker build -t udagram-api-user ./udagram-api-user
-    - name: Build the Docker image
+    - name: Build the udagram-api-feed image
+      run: docker build -t udagram-api-feed ./udagram-api-feed
+    - name: Build the udagram-frontend image
       run: docker build -t udagram-frontend ./udagram-frontend
-    - name: Build the Docker image
+    - name: Build the udagram-reverseproxy image
       run: docker build -t udagram-reverseproxy ./udagram-reverseproxy
-    - name: tag the Docker image
-      run: docker tag udagram-api-feed myxuyen0889/udagram-api-feed:v1
-    - name: tag the Docker image
+    - name: tag the udagram-api-user image
       run: docker tag udagram-api-user myxuyen0889/udagram-api-user:v1
-    - name: tag the Docker image
-      run: docker tag udagram-frontend myxuyen0889/udagram-frontend:v2
-    - name: tag the Docker image
+    - name: tag the udagram-api-feed image
+      run: docker tag udagram-api-feed myxuyen0889/udagram-api-feed:v1
+    - name: tag the udagram-frontend image
+      run: docker tag udagram-frontend myxuyen0889/udagram-frontend:v3
+    - name: tag the udagram-reverseproxy image
       run: docker tag udagram-reverseproxy myxuyen0889/reverseproxy:v1
     -
         name: Login to Docker Hub
@@ -36,13 +36,13 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
-    - name: push the Docker image
+    - name: login to docker
       run: echo ${{ secrets.DOCKER_TOKEN }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
-    - name: push the Docker image
-      run: docker push myxuyen0889/udagram-api-feed:v1
-    - name: push the Docker image
+    - name: push the udagram-api-user image
       run: docker push myxuyen0889/udagram-api-user:v1
-    - name: push the Docker image
-      run: docker push myxuyen0889/udagram-frontend:v2
-    - name: push the Docker image
+    - name: push the udagram-api-feed image
+      run: docker push myxuyen0889/udagram-api-feed:v1
+    - name: push the udagram-frontend image
+      run: docker push myxuyen0889/udagram-frontend:v3
+    - name: push the reverseproxy image
       run: docker push myxuyen0889/reverseproxy:v1
