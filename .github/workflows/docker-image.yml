@@ -27,7 +27,7 @@ jobs:
     - name: tag the udagram-api-feed image
       run: docker tag udagram-api-feed myxuyen0889/udagram-api-feed:v1
     - name: tag the udagram-frontend image
-      run: docker tag udagram-frontend myxuyen0889/udagram-frontend:v3
+      run: docker tag udagram-frontend myxuyen0889/udagram-frontend:v4
     - name: tag the udagram-reverseproxy image
       run: docker tag udagram-reverseproxy myxuyen0889/reverseproxy:v1
     -
@@ -43,6 +43,6 @@ jobs:
     - name: push the udagram-api-feed image
       run: docker push myxuyen0889/udagram-api-feed:v1
     - name: push the udagram-frontend image
-      run: docker push myxuyen0889/udagram-frontend:v3
+      run: docker push myxuyen0889/udagram-frontend:v4
     - name: push the reverseproxy image
       run: docker push myxuyen0889/reverseproxy:v1
