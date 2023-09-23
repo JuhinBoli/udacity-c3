@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: ConfigMap
 data:
-  AWS_BUCKET: arn:aws:s3:::demo-xntm
+  AWS_BUCKET: arn:aws:s3:::udacity-xntm
   AWS_PROFILE: default
   AWS_REGION: us-east-1
-  POSTGRES_HOST: cdr.c2zimlntleqi.us-east-1.rds.amazonaws.com
+  POSTGRES_HOST: cdr.cxbktwki7blp.us-east-1.rds.amazonaws.com
   POSTGRES_DATABASE: xuyenntm
   POSTGRES_USERNAME: postgres
   POSTGRES_PASSWORD: postgres

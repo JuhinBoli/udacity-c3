@@ -15,7 +15,7 @@ spec:
         service: frontend
     spec:
       containers:
-      - image: myxuyen0889/udagram-frontend:v2
+      - image: myxuyen0889/udagram-frontend:v3
         name: frontend
         imagePullPolicy: Always  
         resources:
@@ -65,13 +65,13 @@ spec:
               key: POSTGRES_DATABASE
         - name: POSTGRES_PASSWORD
           valueFrom:
-            secretKeyRef:
-              name: env-secret
-              key: POSTGRES_PASSWORD
+            configMapKeyRef:
+              name: env-config
+              key: POSTGRES_PASSWORD 
         - name: POSTGRES_USERNAME
           valueFrom:
-            secretKeyRef:
-              name: env-secret
+            configMapKeyRef:
+              name: env-config
               key: POSTGRES_USERNAME 
         - name: NODE_OPTIONS
           valueFrom:
